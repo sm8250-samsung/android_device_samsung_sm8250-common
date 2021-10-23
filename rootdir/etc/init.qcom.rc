@@ -24,7 +24,6 @@
 #
 
 import /prism/etc/init/init.rc
-import /system/etc/init/init.power.qcom.rc
 
 on init
     # Create energy-aware scheduler tuning audio nodes
@@ -79,6 +78,9 @@ on post-fs-data
     exec u:r:vendor_init:s0 root root -- /vendor/bin/toybox_vendor restorecon -RF /mnt/vendor/cpefs
     exec u:r:vendor_init:s0 root root -- /vendor/bin/toybox_vendor restorecon -RF /sec_efs
     restorecon_recursive /carrier
+
+    # TSP
+    chown system system /sys/class/sec/tsp/cmd
 
 on early-boot
     mount none /system/lib64/libperfmgr.so /vendor/lib64/libperfmgr.so bind

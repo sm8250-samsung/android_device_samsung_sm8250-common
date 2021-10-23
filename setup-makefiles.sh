@@ -8,9 +8,6 @@
 
 set -e
 
-export DEVICE_COMMON=sm8150-common
-export VENDOR=samsung
-
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
@@ -27,8 +24,8 @@ source "${HELPER}"
 # Initialize the helper for common
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
 
-# Warning headers and guards
-write_headers "r5q"
+# Copyright headers and guards
+write_headers "c1q c2q r8q x1q y2q z3q"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
@@ -36,16 +33,16 @@ write_makefiles "${MY_DIR}/proprietary-files.txt" true
 # Finish
 write_footers
 
-if [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
-    # Reinitialize the helper for device
-    setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false
+# Reinitialize the helper for device
+setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false
 
-    # Warning headers and guards
-    write_headers
+# Copyright headers and guards
+write_headers
 
+for BLOB_LIST in "${MY_DIR}"/../"${DEVICE}"/proprietary-files*.txt; do
     # The standard device blobs
-    write_makefiles "${MY_DIR}/../${DEVICE}/proprietary-files.txt" true
+    write_makefiles "${BLOB_LIST}" true
+done
 
-    # Finish
-    write_footers
-fi
+# Finish
+write_footers
