@@ -52,6 +52,8 @@ on init
 
     mount none /vendor/lost+found /vendor/overlay/SoftapOverlay/ bind
 
+    setprop ro.boot.hardware.revision ${ro.revision}
+
 on load_persist_props_action
     # Enable usap
     setprop persist.device_config.runtime_native.usap_pool_enabled true

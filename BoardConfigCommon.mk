@@ -19,6 +19,7 @@ BOARD_VENDOR := samsung
 COMMON_PATH := device/samsung/sm8250-common
 
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -47,7 +48,6 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/sm8250
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CLANG_COMPILE := true
 
 # Image
 BOARD_BOOT_HEADER_VERSION := 2
@@ -136,11 +136,11 @@ BOARD_ROOT_EXTRA_FOLDERS := \
 # Sepolicy
 include device/qcom/sepolicy/SEPolicy.mk
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
     device/samsung_slsi/sepolicy/common/private \
     $(COMMON_PATH)/sepolicy/private
 
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
     device/samsung_slsi/sepolicy/common/public
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor

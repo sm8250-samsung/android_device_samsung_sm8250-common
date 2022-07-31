@@ -16,8 +16,7 @@ LOCAL_SRC_FILES := \
     service.cpp \
     Power.cpp \
     PowerExt.cpp \
-    InteractionHandler.cpp \
-    LineagePower.cpp
+    InteractionHandler.cpp
 
 LOCAL_REQUIRED_MODULES := \
     android.hardware.power-service.samsung-libperfmgr.rc \
@@ -30,9 +29,8 @@ LOCAL_SHARED_LIBRARIES := \
     libutils \
     libbinder_ndk \
     libperfmgr \
-    pixel-power-ext-ndk_platform \
-    android.hardware.power-ndk_platform \
-    vendor.lineage.power-ndk_platform
+    pixel-power-ext-V1-ndk_platform \
+    android.hardware.power-V1-ndk_platform
 
 LOCAL_CFLAGS += -Wall -Werror
 

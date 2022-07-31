@@ -66,3 +66,4 @@ odm							/odm			ext4	ro,barrier=1,discard				wait,avb,logical,first_stage_mount
 
 # Boot Image
 /dev/block/bootdevice/by-name/boot	/boot		emmc	defaults		defaults
+/dev/block/bootdevice/by-name/recovery	/recovery	emmc	defaults		defaults
