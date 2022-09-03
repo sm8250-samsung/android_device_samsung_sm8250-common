@@ -18,6 +18,10 @@ PRODUCT_PACKAGES += \
     gsi_skip_mount.cfg \
     init.gsi.rc \
 
+# Init
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+
 # VNDK
 PRODUCT_EXTRA_VNDK_VERSIONS := \
     28 \
