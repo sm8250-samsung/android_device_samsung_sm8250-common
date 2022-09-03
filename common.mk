@@ -13,6 +13,10 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 # Enable dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# Fastboot
+PRODUCT_PACKAGES += \
+    fastbootd
+
 # GSI specific tasks on boot
 PRODUCT_PACKAGES += \
     gsi_skip_mount.cfg \
@@ -21,6 +25,7 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.recovery.qcom.rc \
 
 # VNDK
 PRODUCT_EXTRA_VNDK_VERSIONS := \
