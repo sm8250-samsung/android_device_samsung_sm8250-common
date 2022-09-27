@@ -65,6 +65,9 @@ TARGET_COPY_OUT_PRODUCT := system/product
 TARGET_COPY_OUT_SYSTEM_EXT := system/system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 
+# Platform
+BOARD_VENDOR := samsung
+
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := true
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
