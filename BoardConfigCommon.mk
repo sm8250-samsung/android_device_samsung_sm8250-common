@@ -67,6 +67,9 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 # Platform
 BOARD_VENDOR := samsung
+BOARD_USES_QCOM_HARDWARE := true
+BUILD_WITHOUT_VENDOR := true
+TARGET_BOARD_PLATFORM := kona
 
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := true
