@@ -1,0 +1,8 @@
+[
+   {
+      "remote":"github",
+      "repository":"sm8250-samsung/android_kernel_samsung_sm8250",
+      "target_path":"kernel/samsung/sm8250"
+   }
+]
+
