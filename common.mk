@@ -27,6 +27,10 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.recovery.qcom.rc \
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+
 # VNDK
 PRODUCT_EXTRA_VNDK_VERSIONS := \
     28 \
