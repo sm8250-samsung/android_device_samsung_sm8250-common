@@ -10,6 +10,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # API level
 PRODUCT_SHIPPING_API_LEVEL := 29
 
+# Doze
+PRODUCT_PACKAGES += \
+    SamsungDoze \
+
 # Enable dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
