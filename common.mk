@@ -30,6 +30,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.recovery.qcom.rc \
+    init.udfps.rc \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
